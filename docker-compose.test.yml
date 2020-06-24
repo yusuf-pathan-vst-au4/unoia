@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  the-focus-sprint:
+    container_name: tfs-unoia-test
+    command: yarn test

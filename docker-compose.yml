@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  tfs-auth-module:
+    build: .
+    image: tfs-auth
+    environment:
+      - MONGODB_URL=mongodb://mongodb:27017/node-boilerplate
+    ports:
+      - '3001:3000'
+    depends_on:
+      - mongodb
+    volumes:
+      - .:/usr/src/tfs-auth
+    networks:
+      - tfs-auth-network
+
+  mongodb:
+    image: mongo:4.2.1-bionic
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata:/data/db
+    networks:
+      - tfs-auth-network
+
+volumes:
+  dbdata:
+
+networks:
+  tfs-auth-network:
+    driver: bridge
