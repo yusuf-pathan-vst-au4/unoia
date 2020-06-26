@@ -11,7 +11,7 @@ const router = express.Router();
 router
   .route('/')
   .post(validate(riderValidation.createRider), riderController.createRider)
-  .get(riderController.getRiders);
+  .get(auth('getRiders'),riderController.getRiders);
 
 router
   .route('/:id')

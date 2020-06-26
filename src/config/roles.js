@@ -4,7 +4,7 @@ const roleRights = new Map();
 
 const teamLeadRights = ['addMembers', 'getMembers', 'deleteMembers', 'updateTeam', 'getMyTeams'];
 
-const adminRights = ['getUsers', 'manageUsers', 'createTeam', 'deleteTeam', 'getAllTeams', ...teamLeadRights];
+const adminRights = ['getRiders', 'manageUsers', 'createTeam', 'deleteTeam', 'getAllTeams', ...teamLeadRights];
 
 roleRights.set(roles[0], []);
 roleRights.set(roles[1], adminRights);

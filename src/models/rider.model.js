@@ -59,6 +59,7 @@ const riderSchema = mongoose.Schema(
   },
   {
     timestamps: true,
+    versionKey: false
   }
 );
 
